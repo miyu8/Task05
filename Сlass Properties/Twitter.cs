@@ -3,7 +3,7 @@ using NInterface_and_Exception;
 
 namespace NСlass_Properties
 {
-    public class Twitter : IVocalize
+    public class Twitter : IVocalize<Twitter>
     {
         public void Vocalize()
         {

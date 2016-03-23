@@ -1,7 +1,8 @@
 ﻿namespace NInterface_and_Exception
 {
-    public interface IVocalize<T>
+    public interface IAnimal
     {
+        void Motion();
         void Vocalize();
     }
 }

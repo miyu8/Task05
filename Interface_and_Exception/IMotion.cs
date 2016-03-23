@@ -1,6 +1,6 @@
 ﻿namespace NInterface_and_Exception
 {
-    public interface IMotion
+    public interface IMotion<T>
     {
         void Motion();
     }

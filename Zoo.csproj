@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface_and_Exception\Animal.cs" />
     <Compile Include="Animals\Cat.cs" />
     <Compile Include="Animals\Herring.cs" />
     <Compile Include="Animals\Sparrow.cs" />

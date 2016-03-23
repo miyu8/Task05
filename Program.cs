@@ -3,6 +3,7 @@ using NLog;
 using NСlass_Properties;
 using NInterface_and_Exception;
 using NAnimals;
+using System.Collections.Generic;
 
 namespace Zoo
 {
@@ -17,98 +18,31 @@ namespace Zoo
             Meow meow = new Meow();
             Сrack crack = new Сrack();
             Twitter twitter = new Twitter();
-            Cat cat = new Cat();
-            Sparrow sparrow = new Sparrow();
-            Herring herring = new Herring();
+            List<IAnimal> list = new List<IAnimal>();
+            list.Add(new Cat<Run, Twitter>());
+            list.Add(new Herring<Swimming, Swimming>());
+            list.Add(new Sparrow<Run, Twitter>());
+            foreach (IAnimal rec in list)
+            {
+                try
+                {
+                    rec.Motion();
+                }
+                catch (BeingNotProperty ex)
+                {
+                    log = LogManager.GetCurrentClassLogger();
+                    log.Error("У данного существа нет такого свойства!" + rec.GetType().ToString(), ex);
+                }
 
-            try
-            {
-                cat.Motion(flight);
-            }
-            catch (BeingNotProperty ex)
-            {
-                log = LogManager.GetCurrentClassLogger();
-                log.Error("У данного существа нет такого свойства!", ex);
-            }
-
-            try
-            {
-                cat.Motion(run);
-            }
-            catch (BeingNotProperty ex)
-            {
-                log = LogManager.GetCurrentClassLogger();
-                log.Error("У данного существа нет такого свойства!", ex);
-            }
-
-            try
-            {
-                cat.Motion(swimming);
-            }
-            catch (BeingNotProperty ex)
-            {
-                log = LogManager.GetCurrentClassLogger();
-                log.Error("У данного существа нет такого свойства!", ex);
-            }
-
-            try
-            {
-                sparrow.Motion(flight);
-            }
-            catch (BeingNotProperty ex)
-            {
-                log = LogManager.GetCurrentClassLogger();
-                log.Error("У данного существа нет такого свойства!", ex);
-            }
-
-            try
-            {
-                sparrow.Motion(run);
-            }
-            catch (BeingNotProperty ex)
-            {
-                log = LogManager.GetCurrentClassLogger();
-                log.Error("У данного существа нет такого свойства!", ex);
-            }
-
-            try
-            {
-                sparrow.Motion(swimming);
-            }
-            catch (BeingNotProperty ex)
-            {
-                log = LogManager.GetCurrentClassLogger();
-                log.Error("У данного существа нет такого свойства!", ex);
-            }
-
-            try
-            {
-                herring.Motion(flight);
-            }
-            catch (BeingNotProperty ex)
-            {
-                log = LogManager.GetCurrentClassLogger();
-                log.Error("У данного существа нет такого свойства!", ex);
-            }
-
-            try
-            {
-                herring.Motion(run);
-            }
-            catch (BeingNotProperty ex)
-            {
-                log = LogManager.GetCurrentClassLogger();
-                log.Error("У данного существа нет такого свойства!", ex);
-            }
-
-            try
-            {
-                herring.Motion(swimming);
-            }
-            catch (BeingNotProperty ex)
-            {
-                log = LogManager.GetCurrentClassLogger();
-                log.Error("У данного существа нет такого свойства!", ex);
+                try
+                {
+                    rec.Vocalize();
+                }
+                catch (BeingNotProperty ex)
+                {
+                    log = LogManager.GetCurrentClassLogger();
+                    log.Error("у данного существа нет такого свойства!" + rec.GetType().ToString(), ex);
+                }
             }
 
             Console.ReadKey();

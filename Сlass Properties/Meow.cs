@@ -3,7 +3,7 @@ using NInterface_and_Exception;
 
 namespace NСlass_Properties
 {
-    public class Meow : IVocalize
+    public class Meow : IVocalize<Meow>
     {
         public void Vocalize()
         {

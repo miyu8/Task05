@@ -3,7 +3,7 @@ using NInterface_and_Exception;
 
 namespace NСlass_Properties
 {
-    public class Run : IMotion
+    public class Run : IMotion<Run>
     {
         public void Motion()
         {

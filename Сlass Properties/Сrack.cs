@@ -3,7 +3,7 @@ using NInterface_and_Exception;
 
 namespace NСlass_Properties
 {
-    public class Сrack : IVocalize
+    public class Сrack : IVocalize<Сrack>
     {
         public void Vocalize()
         {
