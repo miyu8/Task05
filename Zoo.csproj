@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{354EC5C7-33E4-4685-9DD1-C17333532A38}</ProjectGuid>
+    <ProjectGuid>{570B62C9-5CC3-4858-9418-AC3F9A1895F1}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Zoo</RootNamespace>
@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,12 +47,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface_and_Exception\Animal.cs" />
+    <Compile Include="Animals\Cat.cs" />
+    <Compile Include="Animals\Herring.cs" />
+    <Compile Include="Animals\Sparrow.cs" />
+    <Compile Include="Interface_and_Exception\BeingNotProperty.cs" />
+    <Compile Include="Interface_and_Exception\IMotion.cs" />
+    <Compile Include="Interface_and_Exception\IVocalize.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Сlass Properties\Flight.cs" />
+    <Compile Include="Сlass Properties\Meow.cs" />
+    <Compile Include="Сlass Properties\Run.cs" />
+    <Compile Include="Сlass Properties\Swimming.cs" />
+    <Compile Include="Сlass Properties\Twitter.cs" />
+    <Compile Include="Сlass Properties\Сrack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
